@@ -1,0 +1,13 @@
+# ninja log v6
+15	1681	7673844068663630	test_no_1_autogen/timestamp	4b74abde770d0fdc
+15	1681	7673844068663630	test_no_1_autogen/mocs_compilation.cpp	4b74abde770d0fdc
+15	1681	7673844068663630	F:/embedded_project/test_no_1/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/test_no_1_autogen/timestamp	4b74abde770d0fdc
+15	1681	7673844068663630	F:/embedded_project/test_no_1/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/test_no_1_autogen/mocs_compilation.cpp	4b74abde770d0fdc
+1696	6530	7673844070395556	CMakeFiles/test_no_1.dir/main.cpp.obj	32ee156921f1267e
+1688	6662	7673844070317826	CMakeFiles/test_no_1.dir/test_no_1_autogen/mocs_compilation.cpp.obj	53bb95cd00287b84
+46	354	7673846385217839	test_no_1_autogen/timestamp	4b74abde770d0fdc
+46	354	7673846385217839	test_no_1_autogen/mocs_compilation.cpp	4b74abde770d0fdc
+46	354	7673846385217839	F:/embedded_project/test_no_1/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/test_no_1_autogen/timestamp	4b74abde770d0fdc
+46	354	7673846385217839	F:/embedded_project/test_no_1/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/test_no_1_autogen/mocs_compilation.cpp	4b74abde770d0fdc
+355	6112	7673846388372831	CMakeFiles/test_no_1.dir/advancedtictactoe.cpp.obj	cc705fd102aee740
+6112	6882	7673846445923031	test_no_1.exe	a87a5601764a3259
