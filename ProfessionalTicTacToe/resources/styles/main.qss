@@ -1,0 +1,255 @@
+/* Global Styles */
+QWidget {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #0a0a1a;
+}
+
+QMainWindow {
+    background-color: #0a0a1a;
+}
+
+/* Main Title */
+QLabel#titleLabel {
+    font-size: 36px;
+    font-weight: bold;
+    color: #00eeff;
+    margin: 20px;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: transparent;
+    color: #00eeff;
+    border: 2px solid #00eeff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: rgba(0, 238, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8);
+}
+
+QPushButton:pressed {
+    background-color: rgba(0, 238, 255, 0.3);
+}
+
+QPushButton:disabled {
+    color: #555555;
+    border-color: #555555;
+}
+
+/* Game board cells */
+QPushButton[player="x"] {
+    color: #ff69b4;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+QPushButton[player="o"] {
+    color: #00eeff;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Mode selection buttons */
+QPushButton.modeButton {
+    background-color: transparent;
+    color: #00eeff;
+    border: 2px solid #00eeff;
+    padding: 15px 30px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+QPushButton.modeButton:hover {
+    background-color: rgba(0, 238, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8);
+}
+
+/* Labels */
+QLabel {
+    color: #ffffff;
+}
+
+QLabel#statusLabel {
+    font-size: 16px;
+    font-weight: bold;
+    color: #00eeff;
+    margin-bottom: 10px;
+}
+
+QLabel#loginStatus {
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+/* Panels */
+QFrame.panel {
+    background-color: transparent;
+    border: 2px solid #0088ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 136, 255, 0.5);
+}
+
+QLabel.panel-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00eeff;
+    text-shadow: 0 0 5px #00eeff;
+    margin-bottom: 10px;
+}
+
+/* Forms */
+QLineEdit {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: transparent;
+    border: 2px solid #0088ff;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+QLineEdit:focus {
+    border: 2px solid #00eeff;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+}
+
+/* Game Board cells */
+QPushButton.cell {
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    aspect-ratio: 1/1;
+    font-size: 3rem;
+}
+
+QPushButton.cell:hover {
+    background-color: rgba(0, 136, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 136, 255, 0.5);
+}
+
+/* Lists and Tables */
+QTableWidget {
+    border: 1px solid #0088ff;
+    background-color: transparent;
+    gridline-color: #0088ff;
+}
+
+QTableWidget::item {
+    padding: 6px;
+}
+
+QTableWidget::item:selected {
+    background-color: rgba(0, 238, 255, 0.2);
+    color: white;
+}
+
+QHeaderView::section {
+    background-color: #0088ff;
+    color: white;
+    padding: 6px;
+    border: 1px solid #0066bb;
+}
+
+/* Tabs */
+QTabWidget::pane {
+    border: 1px solid #0088ff;
+    background-color: transparent;
+}
+
+QTabBar::tab {
+    background-color: rgba(0, 136, 255, 0.1);
+    padding: 8px 16px;
+    margin-right: 2px;
+    border: 1px solid #0088ff;
+}
+
+QTabBar::tab:selected {
+    background-color: rgba(0, 238, 255, 0.2);
+    border-top: 2px solid #00eeff;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+}
+
+/* Spinner */
+QProgressBar#spinner {
+    background-color: transparent;
+    border: 5px solid rgba(0, 238, 255, 0.3);
+    border-radius: 50px;
+}
+
+QProgressBar#spinner::chunk {
+    background-color: transparent;
+    border-top: 5px solid #00eeff;
+    border-radius: 50px;
+}
+
+/* History panel */
+QFrame.history-panel {
+    border: 2px solid #0088ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 136, 255, 0.5);
+    margin-bottom: 20px;
+}
+
+QLabel.history-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    border-radius: 5px;
+}
+
+/* Player indicators */
+QFrame.player-box {
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+QFrame.player-box.current-player {
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8);
+}
+
+/* Win cell */
+QPushButton.win-cell {
+    background-color: rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+/* Difficulty buttons container */
+QFrame#ai-difficulty-container {
+    border: 2px solid #0088ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 136, 255, 0.5);
+}
+
+/* Selected difficulty */
+QPushButton.selected {
+    background-color: rgba(0, 238, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8);
+}
+
+/* Stat boxes */
+QLabel.stat-box {
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+QLabel.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00eeff;
+} 
