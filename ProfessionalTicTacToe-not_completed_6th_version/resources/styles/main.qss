@@ -1,0 +1,446 @@
+/* Global Styles */
+QWidget {
+    background-color: #0a0a1a; /* Dark blue-black background */
+    color: #ffffff; /* White text */
+    font-family: Arial, sans-serif;
+}
+
+QMainWindow {
+    background-color: #0a0a1a;
+}
+
+/* Force the background color on all widgets */
+* {
+    background-color: #0a0a1a;
+}
+
+/* Headers */
+QLabel[objectName="titleLabel"] {
+    font-size: 42px;
+    color: #00ffff; /* Bright cyan color */
+    padding: 10px;
+    /* Enhanced ultra-bright neon glow effect */
+    text-shadow: 
+        0 0 2px #fff,
+        0 0 4px #fff,
+        0 0 6px #fff,
+        0 0 8px #fff,
+        0 0 10px #00ffff,
+        0 0 15px #00ffff, 
+        0 0 20px #00ffff,
+        0 0 25px #00ffff,
+        0 0 30px #00ffff,
+        0 0 35px #00ffff,
+        0 0 40px #00ffff,
+        0 0 50px #00ffff,
+        0 0 60px #00ffff,
+        0 0 70px #00ffff;
+    font-weight: 800; /* Extra bold */
+    letter-spacing: 3px; /* Increased letter spacing */
+    margin-bottom: 10px;
+}
+
+/* Panels */
+QWidget[objectName="authPanel"],
+QWidget[objectName="historyPanel"],
+QWidget[objectName="statsPanel"],
+QWidget[objectName="modeSelection"],
+QWidget[objectName="playerAuthPanel"],
+QWidget[objectName="gameBoard"],
+QWidget[objectName="difficultyContainer"],
+QWidget[objectName="playerBox"] {
+    border: 1px solid #00ffff; /* Thinner cyan border to match image */
+    border-radius: 5px; /* Smaller radius */
+    padding: 10px; /* Reduced padding */
+    background-color: rgba(0, 10, 30, 0.2); /* More transparent background */
+    box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; /* Glow effect on borders */
+}
+
+QLabel[objectName="panelTitle"] {
+    font-size: 18px; /* Slightly smaller */
+    margin-bottom: 8px;
+    color: #00ffff; /* Bright cyan */
+    text-shadow: 
+        0 0 2px #fff,
+        0 0 4px #fff,
+        0 0 6px #00ffff,
+        0 0 10px #00ffff,
+        0 0 14px #00ffff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Input fields */
+QLineEdit {
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    border: 1px solid #00ffff; /* Thinner cyan border */
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: transparent;
+    color: #00ffff; /* Cyan text */
+    border: 1px solid #00ffff; /* Thinner cyan border */
+    border-radius: 4px;
+    padding: 6px 12px; /* Reduced padding */
+    font-size: 13px; /* Smaller font */
+    margin-right: 6px;
+    margin-bottom: 6px;
+    text-shadow: 0 0 5px #00ffff; /* Subtle text glow */
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); /* Subtle border glow */
+}
+
+QPushButton:hover {
+    background-color: rgba(0, 255, 255, 0.15); /* Subtle hover color */
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.8); /* Enhanced glow on hover */
+}
+
+QPushButton:pressed {
+    background-color: rgba(0, 255, 255, 0.25); /* Pressed color */
+}
+
+QPushButton[objectName="modeButton"] {
+    padding: 8px 15px; /* Reduced padding */
+    font-size: 14px; /* Smaller font */
+    min-width: 160px; /* Narrower buttons */
+    font-weight: normal;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; /* Reduced glow */
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.7); /* Reduced glow on borders */
+}
+
+/* Game cells */
+QPushButton[objectName="cellButton"] {
+    font-size: 32px; /* Slightly smaller font */
+    font-weight: bold;
+    border: 1px solid #0077ff; /* Updated blue border */
+    background-color: rgba(0, 119, 255, 0.1); /* Updated background color */
+}
+
+QPushButton[objectName="cellButton"]:hover {
+    background-color: rgba(0, 119, 255, 0.2); /* Updated hover color */
+}
+
+/* X mark styling */
+QPushButton[objectName="cellButton"][property="cell-value"="X"] {
+    color: #ff69b4; /* Hot pink color for X marks - rgba(255,105,180,255) */
+    text-shadow: 0 0 10px #ff69b4; /* Updated glow effect */
+}
+
+/* O mark styling */
+QPushButton[objectName="cellButton"][property="cell-value"="O"] {
+    color: #00ffff; /* Updated to exact cyan for O marks */
+    text-shadow: 0 0 10px #00ffff; /* Updated glow effect */
+}
+
+/* Winning cells */
+QPushButton[objectName="cellButton"][property="winner"="true"] {
+    background-color: rgba(0, 255, 0, 0.2);
+    border: 1px solid #00ff00;
+}
+
+QPushButton[objectName="toggleStatsViewBtn"] {
+    position: fixed;
+    padding: 6px 12px; /* Reduced padding */
+    font-size: 13px; /* Smaller font */
+    z-index: 100;
+    text-shadow: 0 0 5px #00ffff; /* Reduced neon effect */
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.7); /* Reduced glow on borders */
+}
+
+/* Back to Game button - match exactly what's in the image */
+QPushButton[objectName="backToGameBtn"] {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #00eeff;
+    border: 2px solid #00eeff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 238, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+QPushButton[objectName="backToGameBtn"]:hover {
+    background-color: rgba(0, 238, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8);
+}
+
+QPushButton[property="selected"] {
+    background-color: rgba(0, 255, 255, 0.2); /* Updated selected color */
+}
+
+/* Game Status */
+QLabel[objectName="statusMessage"] {
+    font-size: 15px; /* Reduced font size */
+    color: #00ffff; /* Updated to exact cyan */
+    margin-bottom: 10px;
+    min-height: 18px;
+}
+
+/* Player Info */
+QWidget[objectName="playerBox"] {
+    background-color: rgba(0, 119, 255, 0.1); /* Updated background color */
+    border: 1px solid #00ffff; /* Changed to cyan border to match image */
+    border-radius: 5px;
+    padding: 8px; /* Reduced padding */
+    margin: 2px; /* Reduced margin */
+}
+
+QWidget[property="current-player"="true"] {
+    border: 1px solid #00ffff; /* Updated to exact cyan */
+    background-color: rgba(0, 255, 255, 0.2); /* Updated background color */
+}
+
+/* History Items */
+QListWidget {
+    border: 1px solid #00ffff; /* Changed to cyan border to match image */
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 5px;
+}
+
+/* Regular list items */
+QListWidget::item {
+    padding: 10px;
+    margin-bottom: 10px; /* 10px margin between items, exactly as in image */
+    background-color: rgba(0, 136, 255, 0.1); /* Exact 10% opacity blue from image */
+    border: 1px solid #0088ff; /* Blue border as shown in image */
+    border-radius: 5px;
+}
+
+/* Selected items - match the hover effect from the image */
+QListWidget::item:selected {
+    background-color: rgba(0, 238, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+}
+
+/* Custom styling for leaderboard list to ensure items are contained */
+QListWidget#leaderboardList {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Custom styling for leaderboard items to match target image exactly */
+QListWidget#leaderboardList::item {
+    padding: 15px;
+    padding-right: 25px; /* Extra padding on right to prevent text cutoff */
+    margin: 0px;
+    margin-right: 5px; /* Add right margin to prevent cutoff */
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    border-radius: 5px;
+    height: 30px; /* Increased height */
+    font-size: 16px; /* Increased font size */
+    width: calc(100% - 10px); /* Slightly less than full width to prevent cutoff */
+}
+
+/* Tabs - match the image exactly */
+QWidget[objectName="tabBar"] {
+    border: none;
+    background-color: transparent;
+}
+
+QPushButton[objectName="tabButton"] {
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 0;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+QPushButton[objectName="tabButton"][property="active"="true"] {
+    background-color: rgba(0, 238, 255, 0.2);
+    box-shadow: 0 0 8px rgba(0, 238, 255, 0.4);
+}
+
+/* Stats Grid */
+QLabel[objectName^="stat"] {
+    background-color: rgba(0, 119, 255, 0.1); /* Updated background color */
+    border: 1px solid #00ffff; /* Changed to cyan border to match image */
+    border-radius: 4px;
+    padding: 8px; /* Reduced padding */
+    text-align: center;
+}
+
+QLabel[objectName^="statValue"] {
+    font-size: 16px; /* Reduced font size */
+    font-weight: bold;
+    color: #00ffff; /* Updated to exact cyan */
+}
+
+/* Login Status */
+QLabel[objectName="loginStatus"] {
+    text-align: center;
+    margin: 8px 0; /* Reduced margin */
+    font-style: italic;
+}
+
+QLabel[objectName="loginStatus"][property="status"="error"] {
+    color: #ff69b4; /* Hot pink color for errors - rgba(255,105,180,255) */
+}
+
+QLabel[objectName="loginStatus"][property="status"="success"] {
+    color: #00ffff; /* Updated to exact cyan for success */
+}
+
+/* Loading overlay */
+QWidget[objectName="loadingOverlay"] {
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+/* Statistics View Styling */
+QWidget[objectName="statisticsView"] {
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0a0a1a;
+    z-index: 90;
+    padding: 20px;
+}
+
+QWidget[objectName="statsPanel"] {
+    background-color: transparent;
+    border: 2px solid #0088ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 136, 255, 0.5);
+}
+
+QLabel[objectName="panelTitle"] {
+    color: #00eeff;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00eeff;
+    margin-bottom: 20px;
+}
+
+#tabBar {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+QPushButton[objectName="tabButton"] {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    cursor: pointer;
+    border-radius: 0;
+    margin: 0;
+    color: white;
+    font-size: 16px;
+    height: 40px;
+}
+
+QPushButton[objectName="tabButton"]:hover {
+    background-color: rgba(0, 136, 255, 0.15);
+}
+
+QPushButton[objectName="tabButton"][property="active"="true"] {
+    background-color: rgba(0, 238, 255, 0.2);
+    border: 1px solid #00eeff;
+    color: #00eeff;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+}
+
+#statBox {
+    background-color: rgba(0, 32, 64, 0.3);
+    border: 1px solid #0088ff;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}
+
+#statLabel {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#statValue {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ffff;
+}
+
+QListWidget#leaderboardList::item, QListWidget#fullHistoryList::item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+QListWidget#leaderboardList::item:hover, QListWidget#fullHistoryList::item:hover {
+    background-color: rgba(0, 136, 255, 0.2);
+}
+
+QPushButton[objectName="backToGameBtn"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #00eeff;
+    border: 2px solid #00eeff;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    height: 40px;
+    box-shadow: 0 0 5px rgba(0, 238, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+QPushButton[objectName="backToGameBtn"]:hover {
+    background-color: rgba(0, 238, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8);
+}
+
+/* Set Difficulty Buttons to match the image */
+QPushButton[objectName="difficultyButton"] {
+    min-width: 80px; /* Set proper width */
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid #00ffff;
+    color: #00ffff;
+}
+
+QPushButton[objectName="difficultyButton"]:hover {
+    background-color: rgba(0, 255, 255, 0.15);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+/* Direct styling for the selected difficulty button */
+QPushButton#difficultyButton[property="selected"] {
+    background-color: rgba(0, 255, 255, 0.3);
+    border: 2px solid #00ffff;
+    color: white;
+    text-shadow: 0 0 5px #00ffff, 0 0 8px #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    font-weight: bold;
+}
+
+
