@@ -207,9 +207,6 @@ We welcome contributions to improve the Professional Tic Tac Toe project!
 - Update documentation for API changes
 - Ensure all CI/CD checks pass
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
