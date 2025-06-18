@@ -1,0 +1,478 @@
+/* Global Styles */
+QWidget {
+    background-color: #0a0a1a; /* Dark blue-black background */
+    color: #ffffff; /* White text */
+    font-family: Arial, sans-serif;
+}
+
+QMainWindow {
+    background-color: #0a0a1a;
+}
+
+/* Force the background color on all widgets */
+* {
+    background-color: #0a0a1a;
+}
+
+/* Headers */
+QLabel[objectName="titleLabel"] {
+    font-size: 48px; /* 3rem equivalent */
+    color: #00eeff; /* Exact web cyan color */
+    padding: 10px;
+    /* Simplified glow effect to match web version */
+    text-shadow: 
+        0 0 10px #00eeff, 
+        0 0 20px #00eeff;
+    font-weight: 700; /* Bold instead of extra bold */
+    letter-spacing: normal; /* Default letter spacing */
+    margin-bottom: 30px;
+}
+
+/* Panels */
+QWidget[objectName="authPanel"],
+QWidget[objectName="historyPanel"],
+QWidget[objectName="statsPanel"],
+QWidget[objectName="modeSelection"],
+QWidget[objectName="playerAuthPanel"],
+QWidget[objectName="gameBoard"],
+QWidget[objectName="difficultyContainer"],
+QWidget[objectName="playerBox"] {
+    border: 2px solid #0088ff; /* Match web 2px medium blue border */
+    border-radius: 10px; /* Larger radius like web version */
+    padding: 20px; /* Increased padding to match web */
+    background-color: rgba(0, 136, 255, 0.1); /* Match web background opacity */
+    box-shadow: 0 0 10px rgba(0, 136, 255, 0.5); /* Match web shadow */
+}
+
+QLabel[objectName="panelTitle"] {
+    font-size: 24px; /* 1.5rem equivalent */
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #00eeff; /* Web cyan */
+    text-shadow: 0 0 5px #00eeff; /* Simpler shadow */
+    font-weight: bold;
+    letter-spacing: normal;
+}
+
+/* Input fields */
+QLineEdit {
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: transparent;
+    border: 2px solid #0088ff; /* Web border */
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px; /* 1rem equivalent */
+}
+
+/* Buttons */
+QPushButton {
+    background-color: transparent;
+    color: #00eeff; /* Web cyan */
+    border: 2px solid #00eeff; /* Web border */
+    border-radius: 5px;
+    padding: 10px 20px; /* Web padding */
+    font-size: 16px; /* 1rem */
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0, 238, 255, 0.5); /* Web shadow */
+    transition-duration: 0.3s; /* For animations */
+}
+
+QPushButton:hover {
+    background-color: rgba(0, 238, 255, 0.2); /* Web hover color */
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8); /* Web hover glow */
+}
+
+QPushButton:pressed {
+    background-color: rgba(0, 238, 255, 0.25); /* Web pressed state */
+}
+
+QPushButton[objectName="modeButton"] {
+    padding: 15px 30px; /* Web padding */
+    font-size: 19px; /* 1.2rem */
+    min-width: 200px; /* Web width */
+    font-weight: normal;
+    box-shadow: 0 0 5px rgba(0, 238, 255, 0.5); /* Web shadow */
+}
+
+/* Game cells */
+QPushButton[objectName="cellButton"] {
+    font-size: 48px; /* 3rem, larger like web */
+    font-weight: bold;
+    border: 1px solid #0088ff; /* Web blue border */
+    background-color: rgba(0, 136, 255, 0.1); /* Web background */
+    transition-duration: 0.2s; /* For hover animation */
+}
+
+QPushButton[objectName="cellButton"]:hover {
+    background-color: rgba(0, 136, 255, 0.2); /* Web hover */
+    box-shadow: 0 0 10px rgba(0, 136, 255, 0.5); /* Web hover glow */
+}
+
+/* X mark styling */
+QPushButton[objectName="cellButton"][property="cell-value"="X"] {
+    color: #ff69b4; /* Hot pink for X */
+    text-shadow: 0 0 10px #ff69b4; /* Web glow */
+}
+
+/* O mark styling */
+QPushButton[objectName="cellButton"][property="cell-value"="O"] {
+    color: #00eeff; /* Web cyan for O */
+    text-shadow: 0 0 10px #00eeff; /* Web glow */
+}
+
+/* Winning cells */
+QPushButton[objectName="cellButton"][property="winner"="true"] {
+    background-color: rgba(0, 255, 0, 0.2); /* Web winning color */
+    border: 1px solid #00ff00;
+    animation-name: winPulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+QPushButton[objectName="toggleStatsViewBtn"] {
+    position: fixed;
+    padding: 6px 12px; /* Reduced padding */
+    font-size: 13px; /* Smaller font */
+    z-index: 100;
+    text-shadow: 0 0 5px #00ffff; /* Reduced neon effect */
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.7); /* Reduced glow on borders */
+}
+
+/* Back to Game button */
+QPushButton[objectName="backToGameBtn"] {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #00eeff;
+    border: 2px solid #00eeff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 238, 255, 0.5);
+    transition-duration: 0.3s;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+    from { box-shadow: 0 0 20px rgba(0, 136, 255, 0.6), 0 0 40px rgba(0, 238, 255, 0.2); }
+    to { box-shadow: 0 0 30px rgba(0, 136, 255, 0.8), 0 0 60px rgba(0, 238, 255, 0.4); }
+}
+
+@keyframes winPulse {
+    from { background-color: rgba(0, 255, 0, 0.1); }
+    to { background-color: rgba(0, 255, 0, 0.3); }
+}
+
+QPushButton[objectName="backToGameBtn"]:hover {
+    background-color: rgba(0, 238, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8);
+}
+
+QPushButton[property="selected"] {
+    background-color: rgba(0, 255, 255, 0.2); /* Updated selected color */
+}
+
+/* Game Status */
+QLabel[objectName="statusMessage"] {
+    font-size: 19px; /* 1.2rem */
+    color: #00eeff; /* Web cyan */
+    margin-bottom: 15px;
+    min-height: 24px;
+    text-shadow: 0 0 5px #00eeff; /* Web shadow */
+}
+
+/* Player Info */
+QWidget[objectName="playerBox"] {
+    background-color: rgba(0, 136, 255, 0.1); /* Web background */
+    border: 1px solid #0088ff; /* Web border color */
+    border-radius: 5px;
+    padding: 10px; /* Web padding */
+    margin: 5px; /* Web margin */
+}
+
+QWidget[property="current-player"="true"] {
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8); /* Web glow for active player */
+    border: 1px solid #00eeff; /* Web cyan */
+    background-color: rgba(0, 238, 255, 0.2); /* Web background */
+}
+
+/* History Items */
+QListWidget {
+    border: 1px solid #0088ff; /* Web blue border */
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 5px;
+}
+
+/* Regular list items */
+QListWidget::item {
+    padding: 12px; /* Web padding */
+    margin-bottom: 10px; /* Web margin between items */
+    background-color: rgba(0, 136, 255, 0.1); /* Web background */
+    border: 1px solid #0088ff; /* Web border */
+    border-radius: 5px;
+}
+
+/* Item hover and selection */
+QListWidget::item:hover {
+    background-color: rgba(0, 136, 255, 0.2); /* Web hover */
+    box-shadow: 0 0 10px rgba(0, 136, 255, 0.5); /* Web hover glow */
+}
+
+QListWidget::item:selected {
+    background-color: rgba(0, 238, 255, 0.2); /* Web selected */
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5); /* Web shadow */
+}
+
+/* Custom styling for leaderboard list to ensure items are contained */
+QListWidget#leaderboardList {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Custom styling for leaderboard items to match target image exactly */
+QListWidget#leaderboardList::item {
+    padding: 15px;
+    padding-right: 25px; /* Extra padding on right to prevent text cutoff */
+    margin: 0px;
+    margin-right: 5px; /* Add right margin to prevent cutoff */
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    border-radius: 5px;
+    height: 30px; /* Increased height */
+    font-size: 16px; /* Increased font size */
+    width: calc(100% - 10px); /* Slightly less than full width to prevent cutoff */
+}
+
+/* Tabs - match the image exactly */
+QWidget[objectName="tabBar"] {
+    border: none;
+    background-color: transparent;
+}
+
+QPushButton[objectName="tabButton"] {
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 0;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+QPushButton[objectName="tabButton"][property="active"="true"] {
+    background-color: rgba(0, 238, 255, 0.2);
+    box-shadow: 0 0 8px rgba(0, 238, 255, 0.4);
+}
+
+/* Stats Grid */
+QLabel[objectName^="stat"] {
+    background-color: rgba(0, 119, 255, 0.1); /* Updated background color */
+    border: 1px solid #00ffff; /* Changed to cyan border to match image */
+    border-radius: 4px;
+    padding: 8px; /* Reduced padding */
+    text-align: center;
+}
+
+QLabel[objectName^="statValue"] {
+    font-size: 16px; /* Reduced font size */
+    font-weight: bold;
+    color: #00ffff; /* Updated to exact cyan */
+}
+
+/* Login Status */
+QLabel[objectName="loginStatus"] {
+    text-align: center;
+    margin: 8px 0; /* Reduced margin */
+    font-style: italic;
+}
+
+QLabel[objectName="loginStatus"][property="status"="error"] {
+    color: #ff69b4; /* Hot pink color for errors - rgba(255,105,180,255) */
+}
+
+QLabel[objectName="loginStatus"][property="status"="success"] {
+    color: #00ffff; /* Updated to exact cyan for success */
+}
+
+/* Loading overlay */
+QWidget[objectName="loadingOverlay"] {
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+/* Statistics View Styling */
+QWidget[objectName="statisticsView"] {
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0a0a1a;
+    z-index: 90;
+    padding: 20px;
+}
+
+QWidget[objectName="statsPanel"] {
+    background-color: transparent;
+    border: 2px solid #0088ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 136, 255, 0.5);
+}
+
+QLabel[objectName="panelTitle"] {
+    color: #00eeff;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00eeff;
+    margin-bottom: 20px;
+}
+
+#tabBar {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+QPushButton[objectName="tabButton"] {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    cursor: pointer;
+    border-radius: 0;
+    margin: 0;
+    color: white;
+    font-size: 16px;
+    height: 40px;
+}
+
+QPushButton[objectName="tabButton"]:hover {
+    background-color: rgba(0, 136, 255, 0.15);
+}
+
+QPushButton[objectName="tabButton"][property="active"="true"] {
+    background-color: rgba(0, 238, 255, 0.2);
+    border: 1px solid #00eeff;
+    color: #00eeff;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+}
+
+#statBox {
+    background-color: rgba(0, 32, 64, 0.3);
+    border: 1px solid #0088ff;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}
+
+#statLabel {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#statValue {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ffff;
+}
+
+QListWidget#leaderboardList::item, QListWidget#fullHistoryList::item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(0, 136, 255, 0.1);
+    border: 1px solid #0088ff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+QListWidget#leaderboardList::item:hover, QListWidget#fullHistoryList::item:hover {
+    background-color: rgba(0, 136, 255, 0.2);
+}
+
+QPushButton[objectName="backToGameBtn"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #00eeff;
+    border: 2px solid #00eeff;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    height: 40px;
+    box-shadow: 0 0 5px rgba(0, 238, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+QPushButton[objectName="backToGameBtn"]:hover {
+    background-color: rgba(0, 238, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.8);
+}
+
+/* Set Difficulty Buttons to match the image */
+QPushButton[objectName="difficultyButton"] {
+    min-width: 80px; /* Set proper width */
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid #00ffff;
+    color: #00ffff;
+}
+
+QPushButton[objectName="difficultyButton"]:hover {
+    background-color: rgba(0, 255, 255, 0.15);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+/* Direct styling for the selected difficulty button */
+QPushButton#difficultyButton[property="selected"] {
+    background-color: rgba(0, 255, 255, 0.3);
+    border: 2px solid #00ffff;
+    color: white;
+    text-shadow: 0 0 5px #00ffff, 0 0 8px #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    font-weight: bold;
+}
+
+/* Custom styling for replay button in history items */
+QWidget[objectName="replayButton"] {
+    background-color: rgba(0, 238, 255, 0.2);
+    border: 1px solid #00eeff;
+    border-radius: 3px;
+    color: #00eeff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+}
+
+QWidget[objectName="replayButton"]:hover {
+    background-color: rgba(0, 238, 255, 0.4);
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.8);
+}
+
+
